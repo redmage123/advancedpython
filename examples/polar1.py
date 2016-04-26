@@ -1,7 +1,8 @@
 #!/usr/bin/env python
+import math
 
 
-cart=[(1,1),(1,3),(2,5)]
+cart=[(1,1),(1,3),(2,5),(3,4)]
 
 
 def carttopolar(t):
@@ -12,5 +13,6 @@ def carttopolar(t):
         theta = math.pi/2
     return(r,theta)
 
-polar = map(carttopolar,cart)
+polar = map(lambda t: (math.sqrt(math.pow(t[0],2)  + math.pow(t[1],2)),math.atan(t[1]/t[0])),cart)
 
+print polar

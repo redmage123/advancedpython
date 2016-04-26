@@ -2,25 +2,41 @@
 
 
 import urllib2
+from collections import namedtuple
 
 
-class app(object):
-    def __init__(self):
-        self.ob = orderBook()
+class menuChoices(object):
+     (LOGIN,REGISTER,BUY,SELL,LIST) = range(0,5)
 
+
+class order (object):
+    def __init__(self)
+        self.orderRecord = namedtuple('orderRec','symbol','name','ask','bid')
+        self.connection = connection()
+
+    def getData(self,symbol):
+        self.orderRecord = connection.send(symbol)
+        return(self.orderRecord)
+    
 class orderBook(object):
-    def __init__(self):
-        self.orderDict = {}
+    def __init__(self,initialBalance=100000.00):
+        self.balance = initialBalance
+        self.orderList = []
+
+    def addOrder(self,orderRec):
+        self.orderList.append(orderRec)
+
+    def sellOrder(self,orderRec):
+        self.orderList.append(orderRec)
 
 class connection(object):
     def __init__(self):
-        self.url = https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20yahoo.finance.quotes%20where%20symbol%20in%20(%22BHP.AX%22)&format=json&diagnostics=true&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys&callback=
 
         self.url = "http://finance.yahoo.com/d/quotes.csv?format=json")
 
-response = urllib2.urlopen('http://finance.yahoo.com/d/quotes.csv?format=json&s=AAPL&f=nab')
-for line in response:
-    print line
+    def send(self,symbol):
+       response = urllib2.urlopen('http://finance.yahoo.com/d/quotes.csv?format=json&s=AAPL&f=nab')
+       return(response[0])
 
 
     
