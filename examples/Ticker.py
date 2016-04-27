@@ -24,3 +24,4 @@ class Ticker(object):
 
 t = Ticker()
 t.producer()
+print "Foobar"
