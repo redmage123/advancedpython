@@ -8,6 +8,13 @@ class Pizza(object):
     def getPrice(self):
         return 0
 
+class PizzaPepperoniandSausage(Pizza):
+    @staticmethod
+    def containsIngredients(ingredient):
+        return ingredient in ['sausage','pepperoni']
+    def getPrice(self):
+        return 9.75
+
 class PizzaHamAndMushroom(Pizza):
     @staticmethod
     def containsIngredient(ingredient):
@@ -40,7 +47,7 @@ def main():
     print(myPizza.getPrice())
     myPizza2 = PizzaFactory().newPizza("curry")
     print(myPizza2.getPrice())
-    myPizza3 = PizzaFactory().newPizza("beef")
+    myPizza3 = PizzaFactory().newPizza("pepperoni")
 
 if __name__ == "__main__":
     main()

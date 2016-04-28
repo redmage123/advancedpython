@@ -7,7 +7,7 @@ class OnlyOne:
             self.val = arg
 
         def __str__(self):
-            return repr(self) + self.val
+            return repr(__OnlyOne) + self.val
 
     instance = None
 
@@ -21,6 +21,6 @@ class OnlyOne:
         return getattr(self.instance, name)
 
 x = OnlyOne("foo")
-print (x)
+print (x.__OnlyOne)
 y = OnlyOne("bar")
-print (y)
+print (y.__OnlyOne)
