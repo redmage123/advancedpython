@@ -1,4 +1,4 @@
-class OrderDetails(object):
+class OrderDetail(object):
 
     def __init__(self):
         pass
